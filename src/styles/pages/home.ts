@@ -49,8 +49,15 @@ export const Container = styled.main`
           }
         }
 
+        .error{
+          color: red;
+          font-size: 10px;
+          font-weight: 400;
+          padding: 4px 0;
+        }
+
         .space{
-          margin-bottom: 20px;
+          margin-top: 20px;
         }
 
 

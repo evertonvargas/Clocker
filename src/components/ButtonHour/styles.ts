@@ -10,7 +10,7 @@ export const Container = styled.button<RadioBoxProps>`
   text-align: center;
   border-radius: 5px;
   width: 150px;
-  background: ${props=> props.isActive ? "#181B23" : "#33cc95"};
+  background: ${props=> props.isActive ? "#181B23" : "var(--green)"};
   color: ${props=> props.isActive ? "#434552" : "#fff"};
 
   transition: filter .2s;
