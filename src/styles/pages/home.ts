@@ -60,6 +60,16 @@ export const Container = styled.main`
           margin-top: 20px;
         }
 
+        .borderError{
+          border: 1px solid red;
+        }
+
+        .position{
+          display: flex;
+          padding-right: 60px;
+          justify-content: flex-end;
+        }
+
 
         button{
           color: var(--white);
