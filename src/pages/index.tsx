@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { useFormik } from "Formik";
 import * as yup from "yup";
 
 import Head from "next/head";
@@ -6,6 +6,7 @@ import { DarkMode } from "../components/DarkMode";
 import { Logo } from "../components/Logo";
 
 import { Container } from "../styles/pages/home";
+
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -17,7 +18,7 @@ const validationSchema = yup.object().shape({
 });
 
 export default function Home() {
-  const formik = useFormik({
+  const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
     onSubmit: () => {},
     validationSchema,
     initialValues: {
@@ -45,13 +46,13 @@ export default function Home() {
                 name="email"
                 id="email"
                 placeholder="email@example.com"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={`${formik.touched.email && formik.errors.email && 'borderError'}`}
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`${touched.email && errors.email && 'borderError'}`}
               />
-              {formik.touched.email && formik.errors.email ? (
-                <div className="error">{formik.errors.email}</div>
+              {touched.email && errors.email ? (
+                <div className="error">{errors.email}</div>
               ) : null}
 
               <label className="space">Senha</label>
@@ -60,13 +61,13 @@ export default function Home() {
                 name="password"
                 id="password"
                 placeholder="Your secret password"
-                value={formik.values.password}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={`${formik.touched.password && formik.errors.password && 'borderError'}`}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`${touched.password && errors.password && 'borderError'}`}
               />
-              {formik.touched.password && formik.errors.password ? (
-                <div className="error">{formik.errors.password}</div>
+              {touched.password && errors.password ? (
+                <div className="error">{errors.password}</div>
               ) : null}
 
               <div className="space">
@@ -76,16 +77,16 @@ export default function Home() {
                   name="username"
                   id="username"
                   placeholder="username"
-                  value={formik.values.username}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  className={`${formik.touched.username && formik.errors.username && 'borderError'}`}
+                  value={values.username}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`${touched.username && errors.username && 'borderError'}`}
                 />
               </div>
-              {formik.touched.username && formik.errors.username ? (
-                <div className="error position">{formik.errors.username}</div>
+              {touched.username && errors.username ? (
+                <div className="error position">{errors.username}</div>
               ) : null}
-              <button type="submit" className="space">Entrar</button>
+              <button type="submit" className="space" onClick={()=>handleSubmit}>Entrar</button>
             </form>
           </div>
         </section>
