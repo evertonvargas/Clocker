@@ -3,6 +3,7 @@ import { createContext, useState, useContext, ReactNode } from "react";
 import Dark from "../styles/themes/Dark";
 import Light from "../styles/themes/Light";
 import { ThemeProvider } from "styled-components";
+import { parseCookies, setCookie } from "nookies";
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -29,13 +30,28 @@ interface ThemeColor {
 
 const DarkModeContext = createContext<ThemeColor>({} as ThemeColor);
 
-export function DarkModeProvider({
-  children,
-}: ThemeProviderProps): JSX.Element {
-  const [theme, setTheme] = useState<Theme>(Dark);
+export function DarkModeProvider({children,}: ThemeProviderProps): JSX.Element {
+  const [theme, setTheme] = useState<Theme>(() => {
+    const cookies = parseCookies();
+  
+    return cookies.USER_THEME === "Light" ? Light : Dark;
+
+    });
 
   const changeTheme = () => {
-    setTheme(theme.title === "light" ? Dark : Light);
+    if(theme.title === "light"){
+      setCookie(null, 'USER_THEME', 'Dark', {
+        maxAge: 86400 * 7,
+        path: "/",
+      })
+      setTheme(Dark)
+    }else{
+      setCookie(null, 'USER_THEME', 'Light', {
+        maxAge: 86400 * 7,
+        path: "/",
+      })
+      setTheme(Light)  
+    } 
   };
 
   return (

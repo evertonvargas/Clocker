@@ -1,10 +1,17 @@
+import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { parseCookies } from "nookies";
 import { DarkMode } from "../components/DarkMode";
 import { Logo } from "../components/Logo";
 
 import { Container } from "../styles/pages/home";
 
+interface HomeProps{
+  USER_THEME: string;
+}
+
 export default function Home() {
+  
   return (
     <>
       <Head>
