@@ -14,14 +14,7 @@ export const Container = styled.div`
       border-radius: 10px;
       margin-top: 40px;
 
-      p{
-        color: var(--gray);
-        font-size: 12px;
-        text-align: center;
-        padding: 20px 0 30px;
-      }
-
-      div{
+      div.hours{
         padding: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);

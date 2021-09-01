@@ -33,6 +33,12 @@ export const Container = styled.main`
         label{
           color: var(--white);
           font-size: 18px;
+
+          span{
+            color: red;
+            font-size: 14px;
+            padding-left: 4px;
+          }
         }
 
         input{

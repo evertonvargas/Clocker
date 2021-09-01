@@ -15,13 +15,6 @@ export const Container = styled.div`
       margin-top: 40px;
       padding: 10px 10px 20px 10px;
 
-      >p{
-        color: var(--gray);
-        font-size: 12px;
-        text-align: center;
-        padding: 15px 0 30px;
-      }
-
       .structure{
         display: flex;
         min-width: 320px;

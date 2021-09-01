@@ -6,7 +6,7 @@ import { DarkMode } from "../components/DarkMode";
 import { Logo } from "../components/Logo";
 
 import { Container } from "../styles/pages/home";
-
+import firebase from "firebase/auth"
 
 const validationSchema = yup.object().shape({
   email: yup
@@ -19,7 +19,9 @@ const validationSchema = yup.object().shape({
 
 export default function Home() {
   const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
-    onSubmit: () => {},
+    onSubmit: (values, form) => {
+      console.log(values)
+    },
     validationSchema,
     initialValues: {
       email: "",
@@ -40,7 +42,7 @@ export default function Home() {
           <p className="title">Crie sua agenda compartilhada</p>
           <div className="formLogin">
             <form>
-              <label>E-mail</label>
+              <label>E-mail<span>*</span></label>
               <input
                 type="email"
                 name="email"
@@ -55,7 +57,7 @@ export default function Home() {
                 <div className="error">{errors.email}</div>
               ) : null}
 
-              <label className="space">Senha</label>
+              <label className="space">Senha<span>*</span></label>
               <input
                 type="password"
                 name="password"
@@ -86,7 +88,7 @@ export default function Home() {
               {touched.username && errors.username ? (
                 <div className="error position">{errors.username}</div>
               ) : null}
-              <button type="submit" className="space" onClick={()=>handleSubmit}>Entrar</button>
+              <button type="submit" className="space" onClick={()=>handleSubmit()}>Entrar</button>
             </form>
           </div>
         </section>

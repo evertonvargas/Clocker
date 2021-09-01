@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { DarkMode } from "../components/DarkMode";
+import { DatePicker } from "../components/DatePicker";
 import { Logo } from "../components/Logo";
 
 import { Container } from "../styles/pages/register";
@@ -15,7 +16,7 @@ export default function Register() {
         <section>
           <Logo />
           <div className="rectangle">
-            <p> &#60; Sábado, 23 de Outubro de 2021 &#62;</p>
+            <DatePicker />
             <div className="structure">
               <p className="first">08:00</p>
               <div>
