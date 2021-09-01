@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🕑 Clocker
 
-## Getting Started
+Este projeto abrange a parte de front end de um sistema de agenda compartilhada, onde você consegue reservar vários horários de atendimento de determinado dia. E para manter  mais organizado, o usuário deve fazer Login.
 
-First, run the development server:
+## 🖼️ Layout
+
+[Figma](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiNd3IjUz1Kecf5ykabGdxM%2FClocker_%3Fnode-id%3D0%253A1)
+
+<p align="center">
+  <img src="public/images/clocker.JPG" alt="clocker">
+</p>
+
+## 🚀 Tecnologias
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [NextJs](https://nextjs.org/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [date-fns](https://date-fns.org/)
+- [cookies](https://github.com/maticzav/nookies)
+
+## :wrench: Instalação
 
 ```bash
+# Open a terminal and copy this repository with the command
+git clone https://github.com/evertonvargas/Clocker
+# or use the download option.
+
+# Install dependencies
+npm i
+
+# Start application
 npm run dev
-# or
-yarn dev
+
+# Go to http://localhost:3000
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

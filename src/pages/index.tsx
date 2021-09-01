@@ -6,7 +6,6 @@ import { DarkMode } from "../components/DarkMode";
 import { Logo } from "../components/Logo";
 
 import { Container } from "../styles/pages/home";
-import firebase from "firebase/auth"
 
 const validationSchema = yup.object().shape({
   email: yup
